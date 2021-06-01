@@ -1,0 +1,132 @@
+复习题的参考答案在附录A中。 
+1.指出下面各种数据使用的合适数据类型（有些可使用多种数据类 型）：
+	a.East Simpleton的人口
+	b.DVD影碟的价格 
+	c.本章出现次数最多的字母 
+	d.本章出现次数最多的字母次数
+
+	a. unsigned int unsigned long   b. float double   c.char  d.unsigned short unsigned int 
+
+
+
+2.在什么情况下要用long类型的变量代替int类型的变量？ 
+	数比较大，超过int所能表示的最大范围数时
+
+	原因之一：在系统中要表示的数超过了int可表示的范围，这时要使用 long类型。
+	原因之二：如果要处理更大的值，那么使用一种在所有系统上都 保证至少是 32 位的类型，可提高程序的可移植性。
+
+3.使用哪些可移植的数据类型可以获得32位有符号整数？选择的理由是什么？
+	int32_t  精确宽度类型	
+
+	如果要正好获得32位的整数，可以使用int32_t类型。
+	要获得可储存至少32位整数的最小类型，可以使用int_least32_t类型。
+	如果要为32位整数提供最快的计算速度，可以选择int_fast32_t类型（假设你的系统已定义了上述类型）。
+
+4.指出下列常量的类型和含义（如果有的话）： 
+	a.'\b'
+	b.1066 
+	c.99.44 
+	d.0XAA 
+	e.2.0e30 
+
+	a. 转义类型  制表符
+	b. 十进制整数类型
+	c. 浮点类型  默认double
+	d. 十六进制整数类型
+	e. 浮点类型使用E计数法
+
+	--- 
+	a.char类型常量（但是储存为int类型） 
+	b.int类型常量 
+	c.double类型常量 
+	d.unsigned int类型常量，十六进制格式 
+	e.double类型常量
+
+
+6.写出下列常量在声明中使用的数据类型和在printf()中对应的转换说明：
+
+	12			int 		%d
+	0X3			int 		%a %A ❌
+	'c'			char		%c %d
+	2.34E07		double 		%f ❌
+	'\040'		char		%c %d
+	7.0			double		%f
+	6L			long		%ld
+	6.0f		float		%f
+	0x5.b6p12	double  	%??	❌
+
+	----  标准答案
+	12			int 				%d
+	0X3			unsigned int 		%#X  //#号 用来显示各进制数的前缀
+	'c'			char(实际上是int		%c
+	2.34E07		double 				%e  //%f打印十进制记数法的float和double  %e %E打印指数记数法的  %a %A 打印十六进制格式的浮点数
+	'\040'		char(实际上是int)	%c 
+	7.0			double				%f
+	6L			long				%ld
+	6.0f		float				%f
+	0x5.b6p12	float  				%a  // %a %A 打印十六进制格式的浮点数
+
+7.写出下列常量在声明中使用的数据类型和在printf()中对应的转换说明 （假设int为16位）：
+
+	012			int 			%o %O ❌
+	2.9e05L 	long double		%lf ❌
+	's'			char			%c %d
+	100000		long 			%ld
+	'\n'		char			%c
+	20.0f		float			%f
+	0x44		int 			%d ❌
+	-40			int 			%d
+
+
+	--- 标准答案
+	012			unsigned int	%#o %#O
+	2.9e05L 	long double		%le %lE %Le %LE
+	's'			char			%c %d
+	100000		long 			%ld
+	'\n'		char			%c
+	20.0f		float			%f
+	0x44		unsigned int	%#x
+	-40			int 			%d
+
+8.假设程序的开头有下列声明： 
+int imate = 2; 
+long shot = 53456; 
+char grade = 'A'; 
+float log = 2.71828; 
+
+把下面printf()语句中的转换字符补充完整： 
+printf("The odds against the %__ were %__ to 1.\n", imate, shot); 
+printf("A score of %__ is not an %__ grade.\n", log, grade); 
+
+printf("The odds against the %d were %ld to 1.\n", imate, shot); 
+printf("A score of %f is not an %c grade.\n", log, grade); 
+
+
+9.假设ch是char类型的变量。分别使用转义序列、十进制值、八进制字 符常量和十六进制字符常量把回车字符赋给ch（假设使用ASCII编码值）。 
+	char ch = '\r'
+	char ch = 13
+	char ch = 015
+	char ch = 0xd
+
+	--- 
+	char ch = '\r'
+	char ch = 13
+	char ch = '\015'
+	char ch = '\0xd'
+
+10.修正下面的程序（在C中，/表示除以）。
+void main(int) / this program is perfect / 
+{
+cows, legs integer; 
+printf("How many cow legs did you count?\n); 
+scanf("%c", legs); cows = legs / 4; 
+printf("That implies there are %f cows.\n", cows) 
+}
+
+11.指出下列转义序列的含义： 
+a.\n 
+b.\\ 
+c.\" 
+d.\t 
+
+a.换行符 b.\  c."  d.制表符
