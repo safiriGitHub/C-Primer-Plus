@@ -1,7 +1,6 @@
 // mytype.c
 
 #include <stdio.h>
-
 #define MYTYPE(X) _Generic((X),\
 int: "int",\
 float: "float",\
@@ -25,3 +24,7 @@ int main(void)
     printf("%s\n", MYTYPE2(&d)); // &d 的类型是 int *
     return 0;
 }
+
+
+
+
