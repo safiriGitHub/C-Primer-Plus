@@ -1,0 +1,7 @@
+{
+    "files.associations": {
+        "stdlib.h": "c",
+        "6-queue.h": "c",
+        "stdio.h": "c"
+    }
+}
