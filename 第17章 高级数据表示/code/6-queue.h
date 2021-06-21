@@ -4,7 +4,13 @@
 #include <stdbool.h>
 
 // 在这插入Item类型的定义
-typedef int Item;
+
+// typedef int Item; // for 8
+typedef struct item // for 9
+{
+    long arrive; // 一位顾客加入队列的时间
+    int processtime; // 该顾客咨询时花费的时间
+} Item;
 
 // 或者 typedef struct item {int gumption; int charisma;} Item;
 #define MAXQUEUE 10
