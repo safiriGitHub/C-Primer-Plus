@@ -9,3 +9,29 @@ Enter next set of limits: 3 25
 The sums of the squares from 9 to 625 is 5520 
 Enter next set of limits: 5 5 
 Done */
+#include <stdio.h>
+
+long caculate(int a, int b);
+
+int main(void)
+{
+    int a, b;
+    printf("Enter lower and upper integer limits :");
+    while (scanf("%d %d", &a, &b) != 0)
+    {
+        printf("The sums of the squares from %d to %d is %ld\n", a, b, caculate(a, b));
+        printf("Enter next set of limits:");
+    }
+    
+    return 0;
+}
+
+long caculate(int a, int b)
+{
+    long sum;
+    for (int i = a; i <= b; i++)
+    {
+        sum = sum+i*i;
+    }
+    return sum;
+}

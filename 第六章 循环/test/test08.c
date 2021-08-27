@@ -9,10 +9,9 @@ int main(void)
     printf("输入两个数，以逗号间隔 :");
     while (scanf("%lf,%lf", &a, &b) != 0)
     {
-        printf("(%g-%g)/(%g*%g) is %.3f", a, b, a, b, (a-b)/(a*b));
+        printf("(%g-%g)/(%g*%g) is %.3f\n", a, b, a, b, (a-b)/(a*b));
         printf("输入两个数，以逗号间隔 :");
     }
     
-
     return 0;
 }
