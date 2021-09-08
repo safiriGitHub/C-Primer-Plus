@@ -45,3 +45,24 @@ int main(void)
     return 0;
 }
 
+/* 
+指针的值， 指针所指向的值，存储指针的地址
+ptr1=0x7ffee746e590, *ptr1=100, &ptr1=0x7ffee746e580
+ptr3=0x7ffee746e5a0, *ptr3=500
+ptr1 + 4 = 0x7ffee746e5a0, *(ptr1 + 4) = 500
+
+values after ptr1++:
+ptr1 = 0x7ffee746e594, *ptr1 =200, &ptr1 = 0x7ffee746e580
+
+values after ptr2--:
+ptr2=0x7ffee746e594, *ptr2=200, &ptr2=0x7ffee746e578
+
+Pointers reset to original values:
+ptr1 = 0x7ffee746e590, ptr2 = 0x7ffee746e598
+
+subtracting one pointer from another:
+ptr2 = 0x7ffee746e598, ptr1 = 0x7ffee746e590, ptr2 - ptr1 = 2
+
+subtracting an int from a pointer:
+ptr3 = 0x7ffee746e5a0, ptr3-2=0x7ffee746e598
+ */
