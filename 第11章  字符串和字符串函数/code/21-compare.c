@@ -19,7 +19,7 @@ int main(void)
         puts("No, that's wrong. Try again.");
         s_gets(try, SIZE);
     }
-    puts("That's right!"); 
+    puts("That's right!");
     return 0;
 }
 
