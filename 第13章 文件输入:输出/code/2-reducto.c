@@ -53,4 +53,4 @@ int main(int argc, char *argv[])
     
 }
 
-//1: fprintf 程序中使用stderr指针把错误消息发送至标准错误，C标准通常都这么 做。
+//1: fprintf 程序中使用stderr指针把错误消息发送至标准错误，C标准通常都这么做。
